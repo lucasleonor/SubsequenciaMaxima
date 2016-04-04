@@ -24,7 +24,6 @@ public class SubsequenciaMaxima {
         subsequenciaMaxima(0, 0, s, 0);
     }
 
-<<<<<<< HEAD
     public static void subsequenciaMaxima(int pos, int posSol, int s[], int i) {
         int n = 0, posAux;
         do {
@@ -37,29 +36,10 @@ public class SubsequenciaMaxima {
                 print(s, posSol);
                 subsequenciaMaxima(++pos, posSol - 1, s, i);
                 pos = -1;
-            }else{
+            } else {
                 break;
             }
         } while (pos != -1);
-=======
-    public static void subsequenciaMaxima(int pos, int posSol, int s[]) {
-        if (posSol == 0) {
-            s[posSol++] = A[pos];
-            pos++;
-        } else if (s[posSol - 1] < A[pos]) {
-            s[posSol++] = A[pos++];
-        } else {
-            if (pos < A.length) {
-                subsequenciaMaxima(pos, posSol - 1, s);
-                s[posSol-1] = A[pos-1];
-            }
-        }
-        if (pos < A.length) {
-            subsequenciaMaxima(pos, posSol, s);
-        } else {
-            print(s);
-        }
->>>>>>> origin/master
     }
 
     public static void print(int[] v, int lastPos) {
