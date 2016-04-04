@@ -29,11 +29,12 @@ public class SubsequenciaMaxima {
             s[posSol++] = A[pos];
             pos++;
         } else if (s[posSol - 1] < A[pos]) {
-            s[posSol++] = A[pos];
-            pos++;
+            s[posSol++] = A[pos++];
         } else {
-            pos++;
-            subsequenciaMaxima(pos, posSol - 1, s);
+            if (pos < A.length) {
+                subsequenciaMaxima(pos, posSol - 1, s);
+                s[posSol-1] = A[pos-1];
+            }
         }
         if (pos < A.length) {
             subsequenciaMaxima(pos, posSol, s);
