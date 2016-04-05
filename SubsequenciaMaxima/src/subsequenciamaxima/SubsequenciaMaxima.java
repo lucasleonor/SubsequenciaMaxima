@@ -50,15 +50,6 @@ public class SubsequenciaMaxima {
         System.out.println("");
     }
 
-    public static int next(int[] v, int n, int pos) {
-        for (int i = pos; i < v.length; i++) {
-            if (v[i] > n) {
-                return i;
-            }
-        }
-        return -1;
-    }
-
     private static void verificaMaior(int[] s, int posSol) {
         if (posSol > maiorPos) {
             for (int i = 0; i < s.length; i++) {
